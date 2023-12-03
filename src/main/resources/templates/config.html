@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+	crossorigin="anonymous"></script>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+	crossorigin="anonymous">
+<link rel="stylesheet" href="css/style.css">
+<title>Robo Auto Atendimento</title>
+</head>
+<body>
+	<form class="row g-3" method="POST" action="/config">
+		<div class="mb-3">
+			<label for="urlbase" class="form-label">Url Base</label> 
+			<input type="text" class="form-control" id="urlbase" name="url" th:value="${task != null ? task.url : ''}">
+		</div>
+		<div class="mb-3">
+			<label for="clientId" class="form-label">Client Id</label> 
+			<input type="text" class="form-control" id="clientId" name="clientId" th:value="${task != null ? task.clientId : ''}">
+		</div>
+		<div class="mb-3">
+			<label for="clientSecret" class="form-label">Client Secret</label> 
+			<input type="text" class="form-control" id="clientSecret" name="clientSecret" th:value="${task != null ? task.clientSecret : ''}">
+		</div>
+		<div class="mb-3">
+			<label for="impressora" class="form-label">Impressoras</label> 
+			<select class="form-select" id="impressora" name="impressora"
+                th:value="${task != null ? task.impressora : ''}">
+            <option th:each="opcao : ${opcoesImpressora}" th:value="${opcao}" th:text="${opcao}"></option>
+        </select>
+		</div>
+		<div class="col-12">
+			<button type="submit" class="btn btn-primary">Salvar Config</button>
+		</div>
+	</form>
+</body>
+</html>

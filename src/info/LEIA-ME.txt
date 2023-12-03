@@ -1,4 +1,0 @@
-Para gerar versão MAVEN utilzar o comando:
-mvn compile assembly:single
-
-o arquivo .jar estará na pasta target

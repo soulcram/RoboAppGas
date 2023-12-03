@@ -1,0 +1,3 @@
+@mvn install:install-file -Dfile=C:\BancoDeDados\dist\lib\comm.jar -DgroupId=comm -DartifactId=comm -Dversion=1.0 -Dpackaging=jar
+@mvn install:install-file -Dfile=C:\BancoDeDados\dist\lib\derbyrun.jar -DgroupId=derbyrun -DartifactId=derbyrun -Dversion=1.0 -Dpackaging=jar
+@mvn install:install-file -Dfile=C:\BancoDeDados\dist\ProgramaGas.jar -DgroupId=ProgramaGas -DartifactId=ProgramaGas -Dversion=1.0 -Dpackaging=jar
