@@ -65,6 +65,12 @@ public class Pedido {
 			}
 		}
 		
+		sb.append("\r\n")
+		.append("\r\n")
+		.append("\r\n")
+		.append("\r\n")
+		.append("\r\n")
+		.append("\r\n");
 		
 		return sb.toString();
 	}
