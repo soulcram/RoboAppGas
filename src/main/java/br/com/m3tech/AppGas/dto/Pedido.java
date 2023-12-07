@@ -1,5 +1,7 @@
 package br.com.m3tech.AppGas.dto;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
@@ -25,7 +27,9 @@ public class Pedido {
 	public String getImpressao() {
 		StringBuilder sb = new StringBuilder();
 		
-		sb.append(merchant.getName())
+		sb.append("Pedido Feito Pelo Aplicativo " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm")))
+		.append("\r\n")
+		.append(merchant.getName())
 		.append("\r\n")
 		.append("\r\n")
 		.append("Cliente: " + customer.getName())
@@ -34,7 +38,9 @@ public class Pedido {
 		.append("\r\n")
 		.append("Endereço")
 		.append("\r\n")
-		.append("Rua: " + delivery.getDeliveryAddress().getStreet())
+		.append("Rua: " + delivery.getDeliveryAddress().getStreet()) 
+		.append("\r\n")
+		.append("Numero: " + delivery.getDeliveryAddress().getNumber())
 		.append("\r\n")
 		.append("Compl: " + delivery.getDeliveryAddress().getComplement())
 		.append("\r\n")
